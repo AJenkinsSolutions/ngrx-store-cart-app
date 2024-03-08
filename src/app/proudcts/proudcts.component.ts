@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-proudcts',
@@ -8,5 +10,14 @@ import { Component } from '@angular/core';
   styleUrl: './proudcts.component.scss'
 })
 export class ProudctsComponent {
+  
+  // Add HttpClient Object
+  //* We add the HttpClientModule in the providers Array in the app.config
+  http = inject(HttpClient);
+
+  
+ 
+
+  constructor(){}
 
 }
