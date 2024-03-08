@@ -22,10 +22,6 @@ export class ProudctsComponent {
   //define the return
   products$ = this.http.get(this.baseUrl + this.productsEndpoint) as Observable<any[]>;
 
-
-
- 
-
   constructor(){}
 
 }

@@ -13,7 +13,8 @@ import { SideBarSignal } from './shared/signals/sidebar.signal';
 import { ScreenSizeDirective } from './shared/directives/screen-size.directive';
 import { ScreenSizeSignal } from './shared/signals/screen-size.signal';
 import { CounterComponent } from './counter/counter.component';
-import { ProudctsComponent } from './proudcts/proudcts.component';
+import { ProudctsComponent } from './products/products.component';
+
 
 @Component({
   selector: 'app-root',
