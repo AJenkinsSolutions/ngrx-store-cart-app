@@ -4,8 +4,13 @@ import { provideRouter, withViewTransitions } from '@angular/router';
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
-import { provideStore } from '@ngrx/store';
+import { provideState, provideStore } from '@ngrx/store';
+import { counterReducer } from './NGRX-reducers/counter.reducer';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes, withViewTransitions()), provideClientHydration(), provideAnimations(), provideStore()]
+  providers: [provideRouter(routes, withViewTransitions()), provideClientHydration(), provideAnimations(), provideStore(),
+  //Param1: Name of state
+  //Para2: Name of Reducer
+    provideState({name: 'counter', reducer: counterReducer})
+  ]
 };
