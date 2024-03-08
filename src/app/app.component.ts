@@ -13,6 +13,7 @@ import { SideBarSignal } from './shared/signals/sidebar.signal';
 import { ScreenSizeDirective } from './shared/directives/screen-size.directive';
 import { ScreenSizeSignal } from './shared/signals/screen-size.signal';
 import { CounterComponent } from './counter/counter.component';
+import { ProudctsComponent } from './proudcts/proudcts.component';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,8 @@ import { CounterComponent } from './counter/counter.component';
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
-    CounterComponent
+    CounterComponent,
+    ProudctsComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

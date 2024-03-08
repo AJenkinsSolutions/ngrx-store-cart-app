@@ -1,1 +1,9 @@
-<p>proudcts works!</p>
+<h1>in prouducts</h1>
+
+<ul>
+    <ng-container *ngFor="let product of (products$ | async)">
+
+        <li class="text-white">{{product.title}}</li>
+        
+</ng-container>
+</ul>

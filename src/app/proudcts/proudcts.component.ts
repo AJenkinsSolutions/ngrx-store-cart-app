@@ -1,4 +1,4 @@
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, CommonModule, NgFor } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-proudcts',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, CommonModule],
   templateUrl: './proudcts.component.html',
   styleUrl: './proudcts.component.scss'
 })
@@ -19,7 +19,8 @@ export class ProudctsComponent {
   //https://fakestoreapi.com/docs * Using this website to mock the api*
   baseUrl: string = 'https://fakestoreapi.com/';
   productsEndpoint: string = 'products';
-  products$ = this.http.get(this.baseUrl + this.productsEndpoint);
+  //define the return
+  products$ = this.http.get(this.baseUrl + this.productsEndpoint) as Observable<any[]>;
 
 
 
