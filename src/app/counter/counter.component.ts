@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { AppState } from '../NGRX-states/app.state';
 import { selectCount } from '../NGRX-selectors/counter.selector';
 import { AsyncPipe } from '@angular/common';
+import { decrement, increment, reset } from '../NGRX-actions/counter.action';
 
 @Component({
   selector: 'app-counter',
@@ -23,4 +24,20 @@ export class CounterComponent {
     this.count$ = this.store.select(selectCount);
   }
 
+
+//These methods will dispatch our actions to the reducer
+  increment(): void {
+    //Param1 : Which action to dispatch
+    this.store.dispatch(increment())
+  }
+
+  decrement(): void {
+    this.store.dispatch(decrement())
+  }
+
+  reset(): void {
+    this.store.dispatch(reset())
+  }
+
 }
+

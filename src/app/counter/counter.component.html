@@ -13,11 +13,11 @@
         {{counterStore.doubleCount()}}
       </div> -->
       <div class="flex justify-center space-x-4">
-        <button  id="increment"
+        <button (click)="increment()" id="increment"
           class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Increment</button>
-        <button  id="decrement"
+        <button (click)="decrement()" id="decrement"
           class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Decrement</button>
-        <button  id="reset"
+        <button (click)="reset()" id="reset"
           class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">Reset</button>
       </div>
     </div>
