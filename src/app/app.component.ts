@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { SideBarSignal } from './shared/signals/sidebar.signal';
 import { ScreenSizeDirective } from './shared/directives/screen-size.directive';
 import { ScreenSizeSignal } from './shared/signals/screen-size.signal';
+import { CounterComponent } from './counter/counter.component';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,9 @@ import { ScreenSizeSignal } from './shared/signals/screen-size.signal';
     MatCheckboxModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatInputModule,],
+    MatInputModule,
+    CounterComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
