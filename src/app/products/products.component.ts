@@ -2,11 +2,12 @@ import { AsyncPipe, CommonModule, NgFor } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ProductCardComponent } from '../shared/components/product-card/product-card.component';
 
 @Component({
   selector: 'app-proudcts',
   standalone: true,
-  imports: [AsyncPipe, CommonModule],
+  imports: [AsyncPipe, CommonModule, ProductCardComponent],
   templateUrl: './proudcts.component.html',
   styleUrl: './proudcts.component.scss'
 })
