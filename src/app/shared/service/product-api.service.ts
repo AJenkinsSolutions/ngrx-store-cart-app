@@ -15,6 +15,7 @@ export class ProductApiService {
 
   constructor() { }
 
+  //https://chat.openai.com/share/90ecc28b-4960-4dbd-9a4b-6dfe990ff154
   getProducts(){
     //A Dynamic way of adding a property to the api response 
     return this.http.get<IProduct[]>(this.baseUrl + this.productsEndpoint)
@@ -22,7 +23,7 @@ export class ProductApiService {
       map((products) =>{
         return products.map((product) => {
 
-          return {...product, quantity:1}
+          return {...product, quantity: 1}
 
         })
       })

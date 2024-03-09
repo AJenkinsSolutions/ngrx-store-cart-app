@@ -1,4 +1,5 @@
 export interface IProduct {
+    quantity: number
     id: number
     title: string
     price: number
@@ -6,6 +7,7 @@ export interface IProduct {
     category: string
     image: string
     rating: Rating
+ 
   }
   
   export interface Rating  {
