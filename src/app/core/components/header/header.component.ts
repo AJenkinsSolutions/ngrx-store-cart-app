@@ -6,6 +6,8 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../../../NGRX-states/app.state';
 import { selectCount } from '../../../NGRX-selectors/counter.selector';
 import { AsyncPipe } from '@angular/common';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-header',
@@ -25,10 +27,18 @@ export class HeaderComponent {
   count$: Observable<number>;
 
   //Initalize our Global store
-  constructor(private store: Store<AppState>){
+  constructor(private store: Store<AppState>, public router: Router){
     //Now we can initalize the count$ from the store
     this.count$ = this.store.select(selectCount);
   }
+
+  //Created a explict naviagation method becuases of issues with the routerLink
+  navigateToCart() {
+    this.router.navigate(['/cart']);
+    console.log("Navigate to cart");
+  }
+
+
 
 
 }

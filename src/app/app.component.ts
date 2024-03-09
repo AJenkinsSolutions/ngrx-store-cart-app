@@ -1,6 +1,6 @@
 import { Component, ViewChild, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './core/components/header/header.component';
 import { FooterComponent } from './core/components/footer/footer.component';
 import { HeroComponent } from './core/components/hero/hero.component';
@@ -20,7 +20,7 @@ import { CartComponent } from './pages/cart/cart.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, HeaderComponent, FooterComponent, HeroComponent, MatButtonModule, MatSidenavModule,ScreenSizeDirective,
+  imports: [CommonModule, RouterModule, RouterOutlet, RouterLink, HeaderComponent, FooterComponent, HeroComponent, MatButtonModule, MatSidenavModule,ScreenSizeDirective,
     MatSidenavModule,
     MatCheckboxModule,
     MatFormFieldModule,

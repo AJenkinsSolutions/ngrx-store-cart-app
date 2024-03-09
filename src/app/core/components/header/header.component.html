@@ -15,8 +15,11 @@
       </span>
 
       <div>
-        <button class="text-gray-600 dark:text-gray-300 hover:underline hidden sm:block">Home {{ count$ | async}}</button>
+        <button (click)="navigateToCart()" type="button" routerLink="/cart" routerLinkActive="active" class="text-gray-600 dark:text-gray-300 hover:underline hidden sm:block">Cart </button>
       </div>
+
+ 
+
     </div>
   </div>
 </nav>
