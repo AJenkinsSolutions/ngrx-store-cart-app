@@ -3,7 +3,14 @@
 <!-- This now becomes the child component of ProductComponent -->
 <!-- We have to pass the data from a parent component to a child component -->
 
-@for (item of products$ | async; track $index){
+<div class="grid grid-cols-3 gap-5">
 
-<app-product-card [product]="item"></app-product-card>
-}
+    @for (item of products$ | async; track $index){
+
+        <app-product-card [product]="item"></app-product-card>
+    
+    }
+        
+
+</div>
+

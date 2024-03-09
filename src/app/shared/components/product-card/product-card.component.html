@@ -1,9 +1,11 @@
 <div class="max-w-sm rounded bg-white overflow-hidden shadow-lg">
-    <img class="w-full" [src]="product.image" alt="Sunset in the mountains">
+    <!-- propert binding -->
+    <img class="w-full" [src]="product.image" alt="....">
     <div class="px-6 py-4">
       <div class="font-bold text-xl mb-2">{{product.title}}</div>
       <p class="text-gray-700 text-base">
-       {{product.description}}
+        <!-- substring lets shortern the string text -->
+       {{product.description.substring(0, 100)}}...
       </p>
     </div>
     <div class="px-6 pt-4 pb-2">
