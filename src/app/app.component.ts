@@ -14,6 +14,7 @@ import { ScreenSizeDirective } from './shared/directives/screen-size.directive';
 import { ScreenSizeSignal } from './shared/signals/screen-size.signal';
 import { CounterComponent } from './counter/counter.component';
 import { ProductsComponent } from './products/products.component';
+import { CartComponent } from './pages/cart/cart.component';
 
 
 @Component({
@@ -26,7 +27,8 @@ import { ProductsComponent } from './products/products.component';
     MatButtonModule,
     MatInputModule,
     CounterComponent,
-    ProductsComponent
+    ProductsComponent,
+    CartComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

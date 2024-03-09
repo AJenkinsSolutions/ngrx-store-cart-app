@@ -12,6 +12,11 @@ export const routes: Routes = [
     //Whenever my path is equal to 'counter' load this standalone component
     loadComponent: ()=> import('./products/products.component').then(a=> a.ProductsComponent)
   },
+  {
+    path: 'cart',
+    //Whenever my path is equal to 'counter' load this standalone component
+    loadComponent: ()=> import('./pages/cart/cart.component').then(a=> a.CartComponent)
+  },
 
   {
     path: '',
