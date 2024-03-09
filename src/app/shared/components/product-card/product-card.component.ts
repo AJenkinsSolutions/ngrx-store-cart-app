@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { IProduct } from '../../../models/product.interface';
 
 @Component({
   selector: 'app-product-card',
@@ -17,7 +18,7 @@ export class ProductCardComponent {
   //Meaning it will receive data from the parent component
 
 
-  @Input() product!: any;
+  @Input() product!: IProduct;
   constructor(){}
   
 }

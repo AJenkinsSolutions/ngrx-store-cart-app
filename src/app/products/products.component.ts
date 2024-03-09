@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProductCardComponent } from '../shared/components/product-card/product-card.component';
+import { IProduct } from '../models/product.interface';
 
 @Component({
   selector: 'app-products',
@@ -21,7 +22,7 @@ export class ProductsComponent {
   baseUrl: string = 'https://fakestoreapi.com/';
   productsEndpoint: string = 'products';
   //define the return
-  products$ = this.http.get(this.baseUrl + this.productsEndpoint) as Observable<any[]>;
+  products$ = this.http.get(this.baseUrl + this.productsEndpoint) as Observable<IProduct[]>;
 
   constructor(){}
 
