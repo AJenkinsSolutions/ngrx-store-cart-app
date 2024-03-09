@@ -10,7 +10,7 @@ export const routes: Routes = [
   {
     path: 'products',
     //Whenever my path is equal to 'counter' load this standalone component
-    loadComponent: ()=> import('./products/products.component').then(a=> a.ProudctsComponent)
+    loadComponent: ()=> import('./products/products.component').then(a=> a.ProductsComponent)
   },
 
   {
