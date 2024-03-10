@@ -1,7 +1,7 @@
 import { createSelector } from "@ngrx/store";
 import { AppState } from "../NGRX-states/app.state";
 
-//Selector function like reposotires in the MVC Pattern 
+//Selector functions like reposotires in the MVC Pattern 
 
 
 
