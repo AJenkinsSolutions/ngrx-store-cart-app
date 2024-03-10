@@ -1,12 +1,12 @@
 import { createSelector } from "@ngrx/store";
 import { AppState } from "../NGRX-states/app.state";
-import { state } from "@angular/animations";
+import { State } from "@ngrx/store";
 
 //init cart state  
 export const selectCartState = (state: AppState) => state.cart;
 
 // Now we 'select' the property we want from the state 
-export const seletctProducts = createSelector(
+export const seletctCartProducts = createSelector(
     selectCartState, (state) => state.products
 )
 
