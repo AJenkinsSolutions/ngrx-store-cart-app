@@ -7,6 +7,8 @@ import * as CartActions from '../NGRX-actions/cart.action'
 //The Var which the recuder will be maintaining
 export interface CartState {
     products: IProduct[];
+    //This question mark means nullable
+    totalPrice?: number;
 }
 
 //Initalize the state
