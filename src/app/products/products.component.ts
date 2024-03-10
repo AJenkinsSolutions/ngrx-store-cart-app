@@ -47,8 +47,11 @@ export class ProductsComponent implements OnInit{
     // .subscribe((res=> {
     //   console.log(res)
     // }))
+  }
 
-
+  //Parent component Method which handles the data dispacthed from the child component 
+  //
+  addItemToCart(product : IProduct){
 
   }
  
