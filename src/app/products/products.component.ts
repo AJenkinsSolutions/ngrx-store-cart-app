@@ -5,6 +5,11 @@ import { Observable } from 'rxjs';
 import { ProductCardComponent } from '../shared/components/product-card/product-card.component';
 import { IProduct } from '../models/product.interface';
 import { ProductApiService } from '../shared/service/product-api.service';
+import { AppState } from '../NGRX-states/app.state';
+import { Store } from '@ngrx/store';
+import { cartReducer } from '../NGRX-reducers/cart.reducer';
+import { addToCart } from '../NGRX-actions/cart.action';
+
 
 @Component({
   selector: 'app-products',
@@ -24,8 +29,8 @@ export class ProductsComponent implements OnInit{
 
   //define the return
   products$ = this.productApiService.getProducts() as Observable<IProduct[]>
-
-  constructor(){}
+  
+  constructor(private store: Store<AppState>){}
 
   ngOnInit(): void {
 
@@ -40,9 +45,7 @@ export class ProductsComponent implements OnInit{
     // .subscribe(res => {
     //   console.log(res)
     // })
-    
-
-
+  
     // this.productApiService.getProducts()
     // .subscribe((res=> {
     //   console.log(res)
@@ -51,7 +54,9 @@ export class ProductsComponent implements OnInit{
 
   //Parent component Method which handles the data dispacthed from the child component 
   //
-  addItemToCart(product : IProduct){
+  addItemToCart(product : IProduct): void{
+
+    this.store.dispatch(addToCart({product}));
 
   }
  

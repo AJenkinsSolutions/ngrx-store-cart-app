@@ -23,7 +23,7 @@ export class CounterComponent {
     //Now we can initalize the count$ from the store
     this.count$ = this.store.select(selectCount);
   }
-
+ 
 
 //These methods will dispatch our actions to the reducer
   increment(): void {
