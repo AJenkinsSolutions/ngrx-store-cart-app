@@ -35,7 +35,7 @@ export class ProductsComponent implements OnInit{
   ngOnInit(): void {
 
     //Logger.info
-    console.log(this.products$.forEach(obj => console.log(obj)))
+    //console.log(this.products$.forEach(obj => console.log(obj)))
 
     //EXAMPLE: of flat api call vs dynamiccly adding the quantity property
 
@@ -55,7 +55,7 @@ export class ProductsComponent implements OnInit{
   //Parent component Method which handles the data dispacthed from the child component 
   //
   addItemToCart(product : IProduct): void{
-
+    console.info("in addItemToCart in  productComponent.ts")
     this.store.dispatch(addToCart({product}));
 
   }

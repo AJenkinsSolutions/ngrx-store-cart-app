@@ -1,6 +1,6 @@
 <div class="max-w-sm rounded bg-white overflow-hidden shadow-lg" >
     <!-- propert binding -->
-    <img width="200px" height="200px" class="block mx-auto" [src]="product.image" alt="....">
+    <img width="200px" height="200px" class="block mx-auto" [src]="" alt="....">
     <div class="px-6">
       <div class="font-bold text-xl mb-2">{{product.title}}</div>
       <p class="text-gray-700 text-base">
@@ -10,7 +10,7 @@
     </div>
 
     <div class="px-6 pt-2">
-      <span (click)="addToCart(product)" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{product.category}}</span>
+      <span  class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{product.category}}</span>
       <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{product.rating.rate}}</span>
       <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{product.price | currency}}</span>
     </div>
@@ -18,8 +18,8 @@
 
     <div class="grid grid-cols-2 pt-2 pb-2">
 
-      <button type="button" class="bg-green-500 text-white font-bold rounded py-2 px-4 mx-4 hover:bg-gray-700"> View Product </button>
-      <button type="button" class="bg-yellow-500 text-white font-bold rounded py-2 px-2 mx-2 hover:bg-gray-700"> Add to cart </button>
+      <button  type="button" class="bg-green-500 text-white font-bold rounded py-2 px-4 mx-4 hover:bg-gray-700"> View Product </button>
+      <button (click)="addToCart(product)" type="button" class="bg-yellow-500 text-white font-bold rounded py-2 px-2 mx-2 hover:bg-gray-700"> Add to cart </button>
       
     </div>
 

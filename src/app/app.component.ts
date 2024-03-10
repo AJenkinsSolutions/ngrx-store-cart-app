@@ -15,6 +15,8 @@ import { ScreenSizeSignal } from './shared/signals/screen-size.signal';
 import { CounterComponent } from './counter/counter.component';
 import { ProductsComponent } from './products/products.component';
 import { CartComponent } from './pages/cart/cart.component';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 
 
 @Component({
@@ -28,7 +30,9 @@ import { CartComponent } from './pages/cart/cart.component';
     MatInputModule,
     CounterComponent,
     ProductsComponent,
-    CartComponent
+    CartComponent,
+    
+  
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
