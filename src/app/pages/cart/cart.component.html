@@ -1,1 +1,7 @@
 <h1 class="text-3xl text-white">cart works!</h1>
+
+<span class="text-xl text-white">
+    <!-- Json pipe converts object into a json -->
+    {{cartItems$ | async | json }}
+</span>
+
