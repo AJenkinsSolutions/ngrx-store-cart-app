@@ -22,6 +22,7 @@ export class ProductCardComponent {
 
 
   // The Input means it is taking 'IN' data from the parent component
+  // Use Case: in this case we are taking that the 'InputDATA' and using it to populate our product cards
   @Input() product!: IProduct;
 
   //Output means we are 'Outputting' something from the UI *In this case its a product obj*

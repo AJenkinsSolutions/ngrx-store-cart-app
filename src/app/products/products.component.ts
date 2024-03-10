@@ -27,7 +27,7 @@ export class ProductsComponent implements OnInit{
   baseUrl: string = 'https://fakestoreapi.com/';
   productsEndpoint: string = 'products';
 
-  //define the return
+  //define the return api call
   products$ = this.productApiService.getProducts() as Observable<IProduct[]>
   
   constructor(private store: Store<AppState>){}

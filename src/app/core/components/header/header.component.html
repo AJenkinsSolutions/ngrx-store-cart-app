@@ -15,7 +15,7 @@
       </span>
 
       <div>
-        <button (click)="navigateToCart()" type="button" routerLink="/cart" routerLinkActive="active" class="text-gray-600 dark:text-gray-300 hover:underline hidden sm:block">Cart </button>
+        <button (click)="navigateToCart()" type="button" routerLink="/cart" routerLinkActive="active" class="text-gray-600 dark:text-gray-300 hover:underline hidden sm:block">Cart {{ (products$ | async)?.length}} </button>
       </div>
 
  
