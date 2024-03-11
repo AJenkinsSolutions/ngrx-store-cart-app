@@ -5,7 +5,7 @@ import { seletctCartProducts } from '../../NGRX-selectors/cart.selector';
 import { Observable } from 'rxjs';
 import { IProduct } from '../../models/product.interface';
 import { CommonModule, NgFor } from '@angular/common';
-import { removeItem } from '../../NGRX-actions/cart.action';
+import { decrementProductCount, incrementProductCount, removeItem } from '../../NGRX-actions/cart.action';
 
 @Component({
   selector: 'app-cart',
@@ -23,8 +23,20 @@ export class CartComponent {
 
 
   remove(productId: number){
-    console.log("info : Remove item dispacthed")
+    console.log("info : Remove item dispacther")
     this.store.dispatch(removeItem({productId}));
+  }
+
+  incrementItemQuantity(productId : number){
+
+    console.log("info : incrementItemQuantity dispacther" );
+    this.store.dispatch(incrementProductCount({productId}))
+  }
+
+  decrementItemQuantity(productId : number){
+    console.log("info : decrementItemQuantity dispacther in cart Component" );
+    this.store.dispatch(decrementProductCount({productId}))
+
   }
 
 }

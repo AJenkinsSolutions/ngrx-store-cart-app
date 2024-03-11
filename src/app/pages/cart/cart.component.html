@@ -57,13 +57,13 @@
                 </button>
                 <!-- Quantity Controls -->
                 <div class="quantity-controls flex items-center pl-4">
-                  <button 
+                  <button (click)="decrementItemQuantity(item.id)"
                     class="decrement-button bg-red-300 text-gray-600 hover:bg-red-400 px-2 py-1 rounded-l">
                     -
                   </button>
-                  <input type="text" readonly class="quantity-input h-7 w-12 text-center border-t border-b"
+                  <input  type="text" readonly class="quantity-input h-7 w-12 text-center border-t border-b"
                     [value]="item.quantity">
-                  <button 
+                  <button (click)="incrementItemQuantity(item.id)"
                     class="increment-button bg-green-300 text-gray-600 hover:bg-green-400 px-2 py-1 rounded-r">
                     +
                   </button>
