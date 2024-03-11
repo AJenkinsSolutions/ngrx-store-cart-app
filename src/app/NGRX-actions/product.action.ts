@@ -8,8 +8,8 @@ export const loadProduct = createAction(
 
 export const loadProductSuccess = createAction(
     '[Product Component] LoadProductSuccess',
-     props<{products: IProduct[]}>)
+     props<{products: IProduct[]}>())
     
 export const loadProductFailure = createAction(
     '[Product Component] LoadProductFailure'
-    , props<{errorMessage: string}>);
+    , props<{errorMessage: string}>());
