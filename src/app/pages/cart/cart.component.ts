@@ -5,6 +5,7 @@ import { seletctCartProducts } from '../../NGRX-selectors/cart.selector';
 import { Observable } from 'rxjs';
 import { IProduct } from '../../models/product.interface';
 import { CommonModule, NgFor } from '@angular/common';
+import { removeItem } from '../../NGRX-actions/cart.action';
 
 @Component({
   selector: 'app-cart',
@@ -19,5 +20,11 @@ export class CartComponent {
   cartItems$: Observable<IProduct[]> = this.store.select(seletctCartProducts)
 
   constructor(private store: Store<AppState>){}
+
+
+  remove(productId: number){
+    console.log("info : Remove item dispacthed")
+    this.store.dispatch(removeItem({productId}));
+  }
 
 }
