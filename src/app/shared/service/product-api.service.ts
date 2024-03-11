@@ -11,6 +11,7 @@ export class ProductApiService {
   //Responsible for doing API call
   http = inject(HttpClient);
   baseUrl: string = 'https://fakestoreapi.com/';
+  //baseUrl: string = 'https://localhost:3002/';
   productsEndpoint: string = 'products';
 
   constructor() { }

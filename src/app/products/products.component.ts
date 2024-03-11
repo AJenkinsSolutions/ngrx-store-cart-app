@@ -24,8 +24,9 @@ export class ProductsComponent implements OnInit{
   //* We add the HttpClientModule in the providers Array in the app.config
   http = inject(HttpClient);
   productApiService = inject(ProductApiService)
-  baseUrl: string = 'https://fakestoreapi.com/';
-  productsEndpoint: string = 'products';
+ // baseUrl: string = 'https://fakestoreapi.com/';
+ // baseUrl: string = 'localhost:3002/'
+  //productsEndpoint: string = 'products';
 
   //define the return api call
   products$ = this.productApiService.getProducts() as Observable<IProduct[]>
