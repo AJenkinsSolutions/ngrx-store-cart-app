@@ -81,7 +81,7 @@ export const cartReducer = createReducer(
     //DELETE
     on(CartActions.removeItem, (state, { productId }) => {
         //T his call back func filters through the array add removes the product with the corrsponding ID
-        const updatedProducts = state.products.filter((product) => product.id === productId)
+        const updatedProducts = state.products.filter((product) => product.id !== productId)
 
         return {
             ...state,
