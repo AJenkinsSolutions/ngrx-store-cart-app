@@ -5,9 +5,7 @@ import { IProduct } from "../models/product.interface";
 import * as ProductActions from '../NGRX-actions/product.action'
 
 export interface ProductState {
-
     products: IProduct[];
-
     error: string | null
 
 }

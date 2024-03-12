@@ -4,7 +4,7 @@ import { IProduct } from "../models/product.interface";
 
 
 export const loadProduct = createAction(
-    '[Prodcut Component] LoadProduct');
+    '[Product Component] LoadProduct');
 
 // effects Actions
 export const loadProductSuccess = createAction(

@@ -1,4 +1,4 @@
-import { AsyncPipe, CommonModule, NgFor } from '@angular/common';
+import { AsyncPipe, CommonModule, JsonPipe, NgFor } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, inject } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -9,7 +9,9 @@ import { AppState } from '../NGRX-states/app.state';
 import { Store } from '@ngrx/store';
 import { cartReducer } from '../NGRX-reducers/cart.reducer';
 import { addToCart } from '../NGRX-actions/cart.action';
-
+import * as ProductActions from '../NGRX-actions/product.action';
+import * as ProductSelector from '../NGRX-selectors/product.selector';
+import { json } from 'stream/consumers';
 
 @Component({
   selector: 'app-products',
@@ -29,9 +31,17 @@ export class ProductsComponent implements OnInit{
   //productsEndpoint: string = 'products';
 
   //define the return api call
-  products$ = this.productApiService.getProducts() as Observable<IProduct[]>
+//products$ = this.productApiService.getProducts() as Observable<IProduct[]>
+ products$! : Observable<IProduct[]>;
+ error!: Observable<string | null>
   
-  constructor(private store: Store<AppState>){}
+  constructor(private store: Store<{ cart: {products: IProduct[]}}>){
+
+    this.store.dispatch(ProductActions.loadProduct());
+    this.products$ = this.store.select(ProductSelector.selectAllProducts)
+    this.error = this.store.select(ProductSelector.selectProductError)
+    console.log(this.products$)
+  }
 
   ngOnInit(): void {
 
@@ -57,7 +67,7 @@ export class ProductsComponent implements OnInit{
   //
   addItemToCart(product : IProduct): void{
     console.info("in addItemToCart in  productComponent.ts")
-    this.store.dispatch(addToCart({product}));
+    this.store.dispatch(addToCart({ product }));
 
   }
  
