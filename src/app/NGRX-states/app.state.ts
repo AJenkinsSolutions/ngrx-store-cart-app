@@ -1,5 +1,6 @@
 import { CartState } from "../NGRX-reducers/cart.reducer";
 import { CounterState } from "../NGRX-reducers/counter.reducer";
+import { ProductState } from "../NGRX-reducers/product.reducer";
 
 //This is our "Global State" interface
 export interface AppState {
@@ -12,5 +13,9 @@ export interface AppState {
 
 
     cart: CartState
+
+
+
+    product: ProductState
     
 } 

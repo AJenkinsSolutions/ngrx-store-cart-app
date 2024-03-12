@@ -8,6 +8,7 @@ import { Store, provideState, provideStore } from '@ngrx/store';
 import { counterReducer } from './NGRX-reducers/counter.reducer';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { cartReducer } from './NGRX-reducers/cart.reducer';
+import { productReducer } from './NGRX-reducers/product.reducer';
 import { StoreDevtoolsModule, provideStoreDevtools } from '@ngrx/store-devtools';
 import { IMAGE_CONFIG } from '@angular/common';
 
@@ -17,6 +18,7 @@ export const appConfig: ApplicationConfig = {
   //Para2: Name of Reducer
     provideState({name: 'counter', reducer: counterReducer}),
     provideState({name: 'cart', reducer: cartReducer}),
+    provideState({name: 'product', reducer: productReducer}),
     provideHttpClient(withFetch()),
     provideStoreDevtools({maxAge: 25}),
     
