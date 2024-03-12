@@ -5,14 +5,23 @@
 
 <div class="grid grid-cols-4 gap-5">
 
-    @for (item of products$ | async; track $index){
+    @if (error | async) {
+        <h1 class="text-4xl dark:text-white">Something went wrong while loading product</h1>
 
-        <!-- Dispatched Action from child component - handleAdd() -->
-        <!-- The 'Output' obj from the 'handleAdd' method will be passed into the Parent Component method responsible for handling dispatched actions -->
-        <!-- The output will be of type 'event' be the child component 'emits' event using 'EventEmitter' -->
-        <app-product-card [product]="item" (handleAdd)="addItemToCart($event)"></app-product-card>
-    
+    }@else{
+
+        @for (item of products$ | async; track $index){
+
+            <!-- Dispatched Action from child component - handleAdd() -->
+            <!-- The 'Output' obj from the 'handleAdd' method will be passed into the Parent Component method responsible for handling dispatched actions -->
+            <!-- The output will be of type 'event' be the child component 'emits' event using 'EventEmitter' -->
+            <app-product-card [product]="item" (handleAdd)="addItemToCart($event)"></app-product-card>
+        
+        }
+
     }
+
+    
         
 
 </div>
